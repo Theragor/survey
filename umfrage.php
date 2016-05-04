@@ -1,110 +1,107 @@
 <!-- https://github.com/Theragor/survey.git -->
 <!doctype html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <title>faranto exchange survey</title>
-    <style>
-        body {
-            font-family: Tahoma, Geneva, sans-serif;
-            background: rgba(235, 235, 255, 1);
-            font-size: 1em;
+<meta charset="utf-8">
+<title>faranto exchange survey</title>
+<style>
+    body {
+        font-family: Tahoma, Geneva, sans-serif;
+        background: rgba(235, 235, 255, 1);
+        font-size: 1em;
+    }
+    header {
+        width: 99%;
+    }
+    div#wrapper {
+        margin: 0 auto;
+        padding: 10px;
+        max-width: 1000px;
+        background: #FFF;
+        box-shadow: #099 0px 2px 5px 5px;
+    }
+    section {
+        width: 99%;
+    }
+    br {
+        clear: both;
+    }
+    textarea {
+        display: block;
+        width: 98%;
+        min-height: 200px;
+        margin: 0 auto;
+        height: auto;
+    }
+    input.regular-radio {
+        -webkit-appearance: none;        /* löscht die Browserstandarteinstellungen für die Radio-Button */
+        background-color: #fafafa;
+        border: 1px solid #cacece;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+        padding: 9px;
+        border-radius: 50px;
+        display: inline-block;
+        position: relative;
+    }
+    input.regular-radio:checked:after {
+        content: ' ';
+        width: 12px;
+        height: 12px;
+        border-radius: 50px;
+        position: absolute;
+        top: 3px;
+        background: #99a1a7;
+        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+        text-shadow: 0px;
+        left: 3px;
+        font-size: 32px;
+    }
+    input.regular-radio:checked {
+        background-color: #e9ecee;
+        color: #99a1a7;
+        border: 1px solid #adb8c0;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 
+                    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), 
+                    inset 15px 10px -12px rgba(255, 255, 255, 0.1), 
+                    inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    input.regular-radio:active, 
+    input.regular-radio:checked:active {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 
+                        inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    input.big-radio {
+        padding: 16px;
+    }
+    input.big-radio:checked:after {
+        width: 24px;
+        height: 24px;
+        left: 4px;
+        top: 4px;
+    }
+    img {
+        height: 100%;
+        width: 100%;
+    }
+    header {
+        vertical-align: center;
+    }
+    
+    @media screen and (max-width: 980px) {
+        input[type=Submit] {
+            height: 50px;
+            font-size: 2em;
         }
-        
-        header {
-            width: 99%;
-        }
-        
-        div#wrapper {
-            margin: 0 auto;
-            padding: 10px;
-            max-width: 1000px;
-            background: #FFF;
-            box-shadow: #099 0px 2px 5px 5px;
-        }
-        
-        section {
-            width: 99%;
-        }
-        
-        br {
-            clear: both;
-        }
-        
-        textarea {
-            display: block;
-            width: 98%;
-            min-height: 200px;
-            margin: 0 auto;
-            height: auto;
-        }
-        
-        input.regular-radio {
-            -webkit-appearance: none;
-            /* löscht die Browserstandarteinstellungen für die Radio-Button */
-            background-color: #fafafa;
-            border: 1px solid #cacece;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-            padding: 9px;
-            border-radius: 50px;
-            display: inline-block;
-            position: relative;
-        }
-        
-        input.regular-radio:checked:after {
-            content: ' ';
-            width: 12px;
-            height: 12px;
-            border-radius: 50px;
-            position: absolute;
-            top: 3px;
-            background: #99a1a7;
-            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
-            text-shadow: 0px;
-            left: 3px;
-            font-size: 32px;
-        }
-        
-        input.regular-radio:checked {
-            background-color: #e9ecee;
-            color: #99a1a7;
-            border: 1px solid #adb8c0;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1), inset 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        input.regular-radio:active,
-        .regular-radio:checked:active {
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        input.big-radio {
-            padding: 16px;
-        }
-        
-        input.big-radio:checked:after {
-            width: 24px;
-            height: 24px;
-            left: 4px;
-            top: 4px;
-        }
-        
-        @media screen and (max-width: 980px) {
-            input[type=Submit] {
-                height: 50px;
-                font-size: 2em;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
-    <div id="wrapper">
-        <header>
-            <!-- faranto Logo -->
-            <img src="img/faranto_logo.svg" />
-            <h1>faranto survey</h1>
-        </header>
+<div id="wrapper">
+    <header>
+        <img src="img/Logo_ESN_Faranto.svg" /><!-- faranto Logo -->
+        <h1>faranto survey</h1>
+    </header>
         <section>
             <!-- Einleitungstext -->
             <span>TEXT</span>
