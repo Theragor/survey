@@ -3,6 +3,7 @@
 
     if( isset( $_POST['Submit'] ) ) {
     try {
+        $filename = 'xml/'.time().'.xml'
         $surveyXML = new SimpleXMLElement('<?xml version="1.0" encoding="utf-8" ?> <survey></survey>');
         
         $submitTime = $surveyXML->addChild('timestamp', date('d.M.Y H:i', time() ) );
@@ -22,7 +23,7 @@
         
         Header('Content-type: text/xml');
         
-        //$handle = fopen ( "filename.xml", "w" ) or exit('<script type="text/javascript">alert("Error: Survey could not be stored!");</script>');
+        //$handle = fopen ( $filename, "w" ) or exit('<script type="text/javascript">alert("Error: Survey could not be stored!");</script>');
         //fwrite ( $handle, $newsXML->asXML() );
         echo $newsXML->asXML();
         //echo '<script type="text/javascript" style="font-size: 1em;">alert("Thank you for your assistance - Your responses is stored.");</script>';
