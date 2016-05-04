@@ -92,7 +92,7 @@
 </section>
 </div>
 
-<?php include 'post.php'; ?>
+<?php include 'function/post.php'; ?>
 
 </body>
 
