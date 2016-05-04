@@ -1,76 +1,80 @@
-    header {
-        width: 99%;
-    }
-    div#wrapper {
-        margin: 0 auto;
-        padding: 10px;
-        max-width: 1000px;
-        background: #FFF;
-        box-shadow: #099 0px 2px 5px 5px;
-    }
-    section {
-        width: 99%;
-    }
-    br {
-        clear: both;
-    }
-    textarea {
-        display: block;
-        width: 98%;
-        min-height: 200px;
-        margin: 0 auto;
-        height: auto;
-    }
-    input.regular-radio {
-        -webkit-appearance: none;        /* löscht die Browserstandarteinstellungen für die Radio-Button */
-        background-color: #fafafa;
-        border: 1px solid #cacece;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-        padding: 9px;
-        border-radius: 50px;
-        display: inline-block;
-        position: relative;
-    }
-    input.regular-radio:checked:after {
-        content: ' ';
-        width: 12px;
-        height: 12px;
-        border-radius: 50px;
-        position: absolute;
-        top: 3px;
-        background: #99a1a7;
-        box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
-        text-shadow: 0px;
-        left: 3px;
-        font-size: 32px;
-    }
-    input.regular-radio:checked {
-        background-color: #e9ecee;
-        color: #99a1a7;
-        border: 1px solid #adb8c0;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 
-                    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), 
-                    inset 15px 10px -12px rgba(255, 255, 255, 0.1), 
-                    inset 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-    input.regular-radio:active, 
-    input.regular-radio:checked:active {
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 
-                        inset 0px 1px 3px rgba(0, 0, 0, 0.1);
-    }
-    input.big-radio {
-        padding: 16px;
-    }
-    input.big-radio:checked:after {
-        width: 24px;
-        height: 24px;
-        left: 4px;
-        top: 4px;
-    }
-    img {
-        height: 100%;
-        width: 100%;
-    }
-    header {
-        vertical-align: center;
-    }
+@charset "UTF-8";
+
+/**** Container ****/
+div#wrapper {
+    margin:     0 auto;                 /* zentriert den Container*/
+    padding:    10px;                   /* Abstand zw. boxborder und content (innen) in Pixel */
+    max-width:  1000px;                 /* maximale Breite des Containers in Pixel */
+    background: #FFF;                   /* Hindergrundfarbe in Hex-Format */
+    box-shadow: #099 0px 2px 5px 5px;   /* [Schattenfarbe] [Pos X] [Pos Y] [Blur] [Größe] */
+}
+header, section, textarea {
+    width: 99%;
+}
+header {
+    vertical-align: center;             /* vertikale Ausrichtung */
+}
+
+/**** Form-Elemente ****/
+textarea {
+    display:    block;                  /* Element wird als Block-Element dargestellt */
+    min-height: 200px;                  /* minimale Höhe in Pixel */
+    height:     auto;                   /* Box passt sich in der Höhe dem Inhalt an wenn > 200px */
+    margin:     0 auto;                 /* zentriert die Box */
+}
+input.regular-radio {                   /* Anpassung der Radiobutton, da in mobilen Webkit-Browsern zu klein */
+    -webkit-appearance: none;           /* löscht die Browserstandarteinstellungen für die Radio-Button */
+    background-color:   #fafafa;
+    border:             1px solid #cacece;
+    box-shadow:               0px   1px  2px       rgba(0, 0, 0, 0.05), 
+                        inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding:             9px;
+    border-radius:      50px;
+    display:            inline-block;
+    position:           relative;
+}
+input.regular-radio:checked:after {
+    content:        ' ';
+    width:          12px;
+    height:         12px;
+    border-radius:  50px;
+    position:       absolute;
+    top:            3px;
+    background:     #99a1a7;
+    box-shadow:     inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+    text-shadow:    0px;
+    left:           3px;
+    font-size:      32px;
+}
+input.regular-radio:checked {
+    background-color: #e9ecee;
+    color:            #99a1a7;
+    border:           1px solid #adb8c0;
+    box-shadow:              0px   1px   2px       rgba(0, 0, 0, 0.05), 
+                      inset  0px -15px  10px -12px rgba(0, 0, 0, 0.05), 
+                      inset 15px  10px -12px       rgba(255, 255, 255, 0.1), 
+                      inset  0px   0px  10px       rgba(0, 0, 0, 0.1);
+}
+input.regular-radio:active, 
+input.regular-radio:checked:active {
+        box-shadow:       0px 1px 2px rgba(0, 0, 0, 0.05), 
+                    inset 0px 1px 3px rgba(0, 0, 0,  0.1);
+}
+input.big-radio {
+    padding: 16px;
+}
+input.big-radio:checked:after {
+    width:  24px;
+    height: 24px;
+    left:    4px;
+    top:     4px;
+}
+
+/* Sonstiges */
+br {
+    clear: both;
+}
+img {
+    height: 100%;
+    width:  100%;
+}
