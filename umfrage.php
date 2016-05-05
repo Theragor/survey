@@ -20,7 +20,7 @@
         <img src="img/Logo_ESN_Faranto.svg" /><!-- faranto Logo -->
         <h1>faranto survey</h1>
     </header>
-    
+
     <section>
         <!-- Einleitungstext -->
         <span>TEXT</span>
@@ -54,7 +54,9 @@
             <label><input name="comtutor" type="radio" class="regular-radio big-radio" value="4" /> bad </label>
             <label><input name="comtutor" type="radio" class="regular-radio big-radio" value="5" /> very bad </label>
 
-            <h4>How good was/is the language of your Tutor?</h4>
+            <h4>How good was/is the language of your tutor?</h4>
+            <!-- Die Frage, die sich am stellt, haben wir Einfluss darauf? Was nützt uns die Erkenntnis, dass Tutoren*innen die (welche Sprache?) nicht gut beherrschen? -->
+            <!-- Meine Empfehlung: weglassen -->
             <!-- Wie gut waren die Komunikationsskills deinens Tutors -->
             <label><input name="speachtutor" type="radio" class="regular-radio big-radio" value="1" /> very good </label>
             <label><input name="speachtutor" type="radio" class="regular-radio big-radio" value="2" /> good </label>
@@ -71,8 +73,8 @@
         <p><!-- Dritter Abschnitt: Allgemein -->
             <hr />
             <h3>Pt3: Generel</h3>
-            
-            <h4>How good was/is the Tutorprogramm.</h4>
+
+            <h4>How good was/is the tutorprogramm.</h4>
             <!-- Wie fandest Du das Tutorenprogramm im gesamten? -->
             <label><input name="programm" type="radio" class="regular-radio big-radio" value="1" /> very good </label>
             <label><input name="programm" type="radio" class="regular-radio big-radio" value="2" /> good </label>
