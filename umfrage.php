@@ -87,7 +87,7 @@
             <textarea name="good" type="text" placeholder="optional"></textarea>
         </p>
 
-        <input type="submit" value="Submit">
+        <input type="submit" name="Submit">
     </form>
 </section>
 </div>
