@@ -1,12 +1,15 @@
 <?php
     date_default_timezone_set("Europe/Berlin");
+	$time = time();
 
-    if( isset( $_POST['Submit'] ) ) {
+    if( isset( $_POST['submit'] ) ) { 
+
     try {
-        $filename = 'xml/'.time().'.xml'
+     	$filename = "../xml/".date('YmdHi', $time ).".xml";
+		
         $surveyXML = new SimpleXMLElement('<?xml version="1.0" encoding="utf-8" ?> <survey></survey>');
         
-        $submitTime = $surveyXML->addChild('timestamp', date('d.M.Y H:i', time() ) );
+        $submitTime = $surveyXML->addChild('timestamp', date('d.M.Y H:i', $time ) );
         $submitName = $surveyXML->addChild('name', $_POST['name'] );
         
         $tutor = $surveyXML->addChild('tutor');
@@ -18,16 +21,22 @@
         
         $general = $surveyXML->addChild('general');
             $tutProgramm = $general->addChild('tutProgramm', $_POST['programm'] );
-            $hate        = $general->addChild('hate', $_POST['bad_missing'] );
-            $like        = $general->addChild('like', $_POST['good'] );
+			$hate 		 = $general->addChild('hate',  htmlspecialchars($_POST['bad_missing'], ENT_QUOTES, 'UTF-8') );
+			$like 		 = $general->addChild('like',  htmlspecialchars($_POST['good'], ENT_QUOTES, 'UTF-8') );
+
+        //Header('Content-type: text/xml'); // nur für Browserausgabe relevant 
+		//echo $surveyXML->asXML();
+
+		if( !$handle = fopen ( $filename, "w" ) ) 
+			echo '<script type="text/javascript">alert("Error: Your responses can not be stored!<br> Please try again!");window.location = "../umfrage.php";</script>';
+        else 
+		{
+			$dom = dom_import_simplexml($surveyXML)->ownerDocument;
+			$dom->formatOutput = true;
+			fwrite ( $handle, $dom->saveXML() );
+        	echo '<script type="text/javascript">window.location = "../thanks.php";</script>';
         
-        Header('Content-type: text/xml');
-        
-        //$handle = fopen ( $filename, "w" ) or exit('<script type="text/javascript">alert("Error: Survey could not be stored!");</script>');
-        //fwrite ( $handle, $newsXML->asXML() );
-        echo $newsXML->asXML();
-        //echo '<script type="text/javascript" style="font-size: 1em;">alert("Thank you for your assistance - Your responses is stored.");</script>';
         } 
-        catch (Exception $e) { echo "bad xml"; } 
+      } catch (Exception $e) { echo "bad xml"; } 
     }
 ?>
