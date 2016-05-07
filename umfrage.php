@@ -1,23 +1,16 @@
 <!-- https://github.com/Theragor/survey.git -->
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>faranto exchange survey</title>
-<link href="stylesheed.css" type="text/css" />
-<style>
-    body {
-        font-family: Tahoma, Geneva, sans-serif;
-        background: rgba(235, 235, 255, 1);
-        font-size: 1em;
-    }
-</style>
+    <meta charset="utf-8">
+    <title>faranto exchange survey</title>
+    <link href="stylesheed.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-<div id="wrapper">
+<main role="main">
     <header>
-        <img src="img/Logo_ESN_Faranto.svg" /><!-- faranto Logo -->
+        <img src="img/Logo_ESN_Faranto.svg" alt="Logo faranto e.V." class="logo" /><!-- faranto Logo -->
         <h1>faranto survey</h1>
     </header>
 
@@ -26,7 +19,7 @@
         <span>TEXT</span>
 
         <!-- Umfrageabschnitt -->
-        <form action="umfrage.php" method="post">
+        <form action="funktion/post.php" method="post">
         <!-- alte nicht umgesetzte Fragen -->
             <!-- Wenn du Noten verteilen könntest, welche würde dein Tutor bekommen? -->
 
@@ -89,13 +82,10 @@
             <textarea name="good" type="text" placeholder="optional"></textarea>
         </p>
 
-        <input type="submit" name="Submit">
+        <center></center><input type="submit" name="Submit"></center>
     </form>
 </section>
-</div>
-
-<?php include 'function/post.php'; ?>
-
+</main>
 </body>
 
 </html>
